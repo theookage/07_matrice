@@ -18,7 +18,7 @@ using Vecteur = std::vector<int>;
 using Matrice = std::vector<Vecteur>;
 
 std::ostream& operator<< (std::ostream& os, const Vecteur& v);
-std::ostream& operator<< (std::ostream& os, const Matrice& v);
+std::ostream& operator<< (std::ostream& os, const Matrice& m);
 
 unsigned minCol(const Matrice& m);
 Vecteur sommeLigne(const Matrice& m);

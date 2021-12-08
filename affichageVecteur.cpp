@@ -17,24 +17,24 @@
 using namespace std;
 
 
-ostream& operator<< (ostream& os, const Vecteur& v) {
+ostream &operator<<(ostream& os, const Vecteur& v) {
    os << "(";
-   for (size_t i=0; i<v.size(); ++i) {
-      if (i)
+   for (Vecteur::const_iterator i = v.begin(); i != v.end(); ++i) {
+      if (*i != v[0])
          os << ", ";
-      os << v[i];
+      os << *i;
    }
    os << ")";
    return os;
 }
 
-ostream& operator<< (ostream& os, const Matrice& v) {
+ostream &operator<<(ostream &os, const Matrice &m) {
    os << "[";
-   for (size_t i=0; i<v.size(); ++i) {
+   for (Matrice::const_iterator i = m.begin(); i != m.end(); ++i) {
 
-      if (i)
+      if (*i != m[0])
          os << ", ";
-      os << v[i];
+      os << *i;
    }
    os << "]";
    return os;
