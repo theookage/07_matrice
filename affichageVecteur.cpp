@@ -18,19 +18,20 @@ using namespace std;
 
 
 ostream& operator<< (ostream& os, const Vecteur& v) {
-   os << "[";
+   os << "(";
    for (size_t i=0; i<v.size(); ++i) {
       if (i)
          os << ", ";
       os << v[i];
    }
-   os << "]";
+   os << ")";
    return os;
 }
 
 ostream& operator<< (ostream& os, const Matrice& v) {
    os << "[";
    for (size_t i=0; i<v.size(); ++i) {
+
       if (i)
          os << ", ";
       os << v[i];

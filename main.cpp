@@ -22,8 +22,8 @@ using namespace std;
 
 int main() {
 
-
-
+   Vecteur m1 = {3,2,1};
+   cout << m1;
    //------------------------------------------------------
    // fin de programme
    cout << endl;

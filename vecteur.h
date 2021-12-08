@@ -12,9 +12,12 @@
 
 #ifndef INC_07_MATRICE_VECTEUR_H
 #define INC_07_MATRICE_VECTEUR_H
-
+#include <iostream>
 #include <vector>
 using Vecteur = std::vector<int>;
 using Matrice = std::vector<Vecteur>;
+
+std::ostream& operator<< (std::ostream& os, const Vecteur& v);
+std::ostream& operator<< (std::ostream& os, const Matrice& v);
 
 #endif //INC_07_MATRICE_VECTEUR_H
