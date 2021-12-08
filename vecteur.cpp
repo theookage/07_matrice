@@ -10,4 +10,11 @@
   ---------------------------------------------------------------------------
 */
 
+#include <vector>
+
 #include "vecteur.h"
+
+
+using Vecteur = vector<int>;
+using Matrice = vector<Vecteur>;
+
