@@ -16,6 +16,8 @@
 #include <iomanip>
 #include <cmath>
 
+#include "vecteur.h"
+
 using namespace std;
 
 int main() {
