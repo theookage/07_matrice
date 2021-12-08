@@ -25,4 +25,7 @@ Vecteur sommeLigne(const Matrice& m);
 Vecteur sommeColonne(const Matrice& m);
 Vecteur vectSommeMin(const Matrice& m);
 
+bool estReguliere(const Matrice& m);
+bool estCarre(const Matrice& m);
+
 #endif //INC_07_MATRICE_VECTEUR_H

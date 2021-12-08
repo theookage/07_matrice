@@ -21,9 +21,13 @@
 using namespace std;
 
 int main() {
+   Vecteur v1 = {1, 2, 3};
+   Matrice m1 = {{3,2,1},{8,9},{4,5,6}};
 
-   Vecteur m1 = {3,2,1};
-   cout << m1;
+   cout << "Vecteur : " << v1 << endl << "Matrice : " << m1<< endl;
+
+   cout << "estCarre     : " << estCarre(m1)     << endl
+        << "estReguliere : " << estReguliere(m1) << endl;
    //------------------------------------------------------
    // fin de programme
    cout << endl;
