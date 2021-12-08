@@ -14,7 +14,7 @@
 
 #include "vecteur.h"
 
-
+using namespace std;
 using Vecteur = vector<int>;
 using Matrice = vector<Vecteur>;
 
