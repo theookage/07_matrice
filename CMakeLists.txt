@@ -3,4 +3,5 @@ project(07_matrice)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(07_matrice main.cpp affichageVecteur.cpp matriceCaracteristique.cpp)
+add_executable(07_matrice main.cpp affichageVecteur.cpp matriceCaracteristique.cpp
+        calculVecteur.cpp)

@@ -19,8 +19,9 @@ using namespace std;
 
 ostream &operator<<(ostream& os, const Vecteur& v) {
    os << "(";
-   for (Vecteur::const_iterator i = v.begin(); i != v.end(); ++i) {
-      if (*i != v[0])
+   Vecteur ::const_iterator debut = v.begin();
+   for (Vecteur::const_iterator i = debut; i != v.end(); ++i) {
+      if (i != debut)
          os << ", ";
       os << *i;
    }
@@ -30,9 +31,10 @@ ostream &operator<<(ostream& os, const Vecteur& v) {
 
 ostream &operator<<(ostream &os, const Matrice &m) {
    os << "[";
-   for (Matrice::const_iterator i = m.begin(); i != m.end(); ++i) {
+   Matrice::const_iterator debut = m.begin();
+   for (Matrice::const_iterator i = debut; i != m.end(); ++i) {
 
-      if (*i != m[0])
+      if (i != debut)
          os << ", ";
       os << *i;
    }

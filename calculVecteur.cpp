@@ -11,6 +11,7 @@
 */
 
 #include <algorithm>
+#include <numeric>
 
 #include "vecteur.h"
 
@@ -31,12 +32,37 @@ unsigned minCol(const Matrice& m) {
    return (*min_element(m.begin(), m.end(), comparerTailleVecteur)).size();
 }
 
-Vecteur sommeLigne(const Matrice& m) {
+unsigned maxCol(const Matrice& m) {
+   if (m.empty())
+      return 0;
+   return (*max_element(m.begin(), m.end(), comparerTailleVecteur)).size();
+}
 
+int sommeVecteur(const Vecteur& v) {
+   return accumulate(v.begin(), v.end(), 0);
+}
+
+Vecteur sommeLigne(const Matrice& m) {
+   Vecteur resultat(m.size());
+   transform(m.begin(), m.end(), resultat.begin(), sommeVecteur);
+   return resultat;
+}
+
+int add(int v1, int v2) {
+   return (v1 + v2);
+}
+
+Vecteur additionColonne(Vecteur v1, Vecteur v2) {
+   if(v2 > v1) {
+      swap(v1, v2);
+   }
+   Vecteur res(max(v1.size(), v2.size()), 0);
+   transform(v1.begin(), v1.end(), v2.begin(), res.begin(), add);
+   return res;
 }
 
 Vecteur sommeColonne(const Matrice& m) {
-
+   return accumulate(m.begin(), m.end(), Vecteur(maxCol(m), 0), additionColonne);
 }
 
 Vecteur vectSommeMin(const Matrice& m) {

@@ -26,7 +26,12 @@ int main() {
 
    cout << "Vecteur : " << v1 << endl << "Matrice : " << m1<< endl;
    cout << "estCarre     : " << estCarre(m1)     << endl
-        << "estReguliere : " << estReguliere(m1);
+        << "estReguliere : " << estReguliere(m1) << endl;
+
+   cout << sommeLigne(m1) << endl;
+   cout << sommeColonne(m1) << endl;
+
+
    //------------------------------------------------------
    // fin de programme
    cout << endl;
