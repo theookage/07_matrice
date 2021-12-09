@@ -10,7 +10,7 @@
   Compilateur : Mingw-w64 g++ 11.2.0
   ---------------------------------------------------------------------------
 */
-
+#include <algorithm>
 #include <iostream>
 #include <cstdlib>
 #include <iomanip>
@@ -22,12 +22,11 @@ using namespace std;
 
 int main() {
    Vecteur v1 = {1, 2, 3};
-   Matrice m1 = {{3,2,1},{8,9},{4,5,6}};
+   Matrice m1 = {{3,2,1},{8,9,6}};
 
    cout << "Vecteur : " << v1 << endl << "Matrice : " << m1<< endl;
-
    cout << "estCarre     : " << estCarre(m1)     << endl
-        << "estReguliere : " << estReguliere(m1) << endl;
+        << "estReguliere : " << estReguliere(m1);
    //------------------------------------------------------
    // fin de programme
    cout << endl;

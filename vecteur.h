@@ -12,8 +12,7 @@
 
 #ifndef INC_07_MATRICE_VECTEUR_H
 #define INC_07_MATRICE_VECTEUR_H
-#include <iostream>
-#include <vector>
+
 using Vecteur = std::vector<int>;
 using Matrice = std::vector<Vecteur>;
 

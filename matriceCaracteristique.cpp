@@ -11,20 +11,30 @@
   ---------------------------------------------------------------------------
 */
 
+
+#include <algorithm>
 #include <vector>
 #include "vecteur.h"
+#include <iostream>
 
 using namespace std;
 
-bool estReguliere(const Matrice& m){
-   size_t taille = m[0].size();
-   for (size_t i = 1; i < m.size(); ++i) {
-      if(m[i].size()!=taille)
-      {
-         return false;
-      }
+bool sizeOK = true;
+
+size_t taille ;
+
+void test(const Vecteur& v)
+{
+   if (v.size() != taille )
+   {
+      sizeOK = false;
    }
-   return true;
+}
+bool estReguliere(const Matrice& m) {
+
+   taille = m[0].size();
+   for_each(m.begin(),m.end(), test);
+   return sizeOK;
 }
 
 bool estCarre(const Matrice& m){
