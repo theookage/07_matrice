@@ -22,14 +22,24 @@ using namespace std;
 
 int main() {
    Vecteur v1 = {1, 2, 3};
-   Matrice m1 = {{3,2,1},{8,9,6}};
+   Matrice m1 = {{3,2,1},{8,9,6},{3,0,2}};
+   Matrice vide = {};
 
-   cout << "Vecteur : " << v1 << endl << "Matrice : " << m1<< endl;
-   cout << "estCarre     : " << estCarre(m1)     << endl
-        << "estReguliere : " << estReguliere(m1) << endl;
+   cout << "Vecteur      : " << v1 << endl
+        << "Matrice      : " << m1 << endl
+        << "estCarre     : " << (estCarre(m1)     ? "oui" : "non") << endl
+        << "estReguliere : " << (estReguliere(m1) ? "oui" : "non") << endl << endl;
 
-   cout << sommeLigne(m1) << endl;
-   cout << sommeColonne(m1) << endl;
+   cout << "minCol       : " << minCol(m1)         << endl
+        << "sommeLigne   : " << sommeLigne(m1)     << endl
+        << "sommeColonne : " << sommeColonne(m1)   << endl
+        << "vectSommeMin : " << vectSommeMin(m1)   << endl << endl;
+
+   cout << "Avec une matrice vide :" << endl
+        << "minCol       : " << minCol(vide)         << endl
+        << "sommeLigne   : " << sommeLigne(vide)   << endl
+        << "sommeColonne : " << sommeColonne(vide) << endl
+        << "vectSommeMin : " << vectSommeMin(vide) << endl;
 
 
    //------------------------------------------------------

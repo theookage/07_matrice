@@ -19,9 +19,32 @@ using Matrice = std::vector<Vecteur>;
 std::ostream& operator<< (std::ostream& os, const Vecteur& v);
 std::ostream& operator<< (std::ostream& os, const Matrice& m);
 
+/**
+ * Retourne la longueur minimum des vecteurs d’une matrice
+ * @param m Matrice
+ * @return  Longueur minimum des vecteurs d'une matrice
+ */
 unsigned minCol(const Matrice& m);
+
+/**
+ * Retourne un vecteur contenant la somme des valeurs de chacune des lignes.
+ * @param m Matrice
+ * @return Vecteur contenant la somme des valeurs de chacune des lignes
+ */
 Vecteur sommeLigne(const Matrice& m);
+
+/**
+ * Retourne un vecteur contenant la somme des valeurs de chacune des colonnes
+ * @param m Matrice
+ * @return  vecteur contenant la somme des valeurs de chacune des colonnes
+ */
 Vecteur sommeColonne(const Matrice& m);
+
+/**
+ * Retourne le vecteur d’une matrice dont la somme des valeurs est la plus faible.
+ * @param m Matrice
+ * @return  Vecteur d’une matrice dont la somme des valeurs est la plus faible
+ */
 Vecteur vectSommeMin(const Matrice& m);
 
 bool estReguliere(const Matrice& m);
