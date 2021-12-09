@@ -50,4 +50,9 @@ Vecteur vectSommeMin(const Matrice& m);
 bool estReguliere(const Matrice& m);
 bool estCarre(const Matrice& m);
 
+void shuffleVecteur(Vecteur& v);
+void shuffleMatrice(Matrice& m);
+void sortVecteur(Vecteur& v);
+void sortMatrice(Matrice& m);
+
 #endif //INC_07_MATRICE_VECTEUR_H

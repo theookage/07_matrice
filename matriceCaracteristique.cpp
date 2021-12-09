@@ -25,19 +25,27 @@ size_t taille ;
 
 void test(const Vecteur& v)
 {
-   if (v.size() != taille )
+   if (v.size() != taille)
    {
       sizeOK = false;
    }
 }
 bool estReguliere(const Matrice& m) {
 
+   if(m.empty())
+   {
+      return true;
+   }
    taille = m[0].size();
    for_each(m.begin(),m.end(), test);
    return sizeOK;
-}
+   }
 
 bool estCarre(const Matrice& m){
+   if(m.empty())
+   {
+      return true;
+   }
    if(estReguliere(m))
    {
       if(m[0].size() == m.size()){

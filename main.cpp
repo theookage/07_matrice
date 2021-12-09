@@ -42,6 +42,10 @@ int main() {
         << "vectSommeMin : " << vectSommeMin(vide) << endl;
 
 
+   shuffleVecteur(v1);
+   shuffleMatrice(m1);
+   cout << "Vecteur Shuffled  : " << v1               << endl
+        << "Matrice Shuffled  : " << m1;
    //------------------------------------------------------
    // fin de programme
    cout << endl;
