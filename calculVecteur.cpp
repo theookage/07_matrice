@@ -70,20 +70,14 @@ int add(int v1, int v2) {
  * @return
  */
 Vecteur additionColonne(Vecteur v1, Vecteur v2) {
-   //On doit resize le vecteur le plus petit, sinon cela va aller chercher une
-   //valeur "aléatoire" en mémoire pour l'addition
-   if(v2.size() > v1.size()) {
-      v1.resize(v2.size(), 0);
-   } else if (v1.size() > v2.size()) {
-      v2.resize(v1.size());
-   }
-
    Vecteur res(max(v1.size(), v2.size()), 0);
    transform(v1.begin(), v1.end(), v2.begin(), res.begin(), add);
    return res;
 }
 
 Vecteur sommeColonne(const Matrice& m) {
+   if (!estReguliere(m))
+      return {};
    return accumulate(m.begin(), m.end(), Vecteur(maxCol(m), 0), additionColonne);
 }
 
