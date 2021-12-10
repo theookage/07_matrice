@@ -22,25 +22,18 @@ Compilateur : Mingw-w64 g++ 11.2.0
 
 using namespace std;
 
-unsigned seed = chrono::system_clock::now().time_since_epoch().count();
-
-void shuffleVecteur(Vecteur& v)
-{
-   //warning car conversion long long en unsigned perte de precision
-   shuffle(v.begin(), v.end(), default_random_engine(seed));
-}
-
 void shuffleMatrice(Matrice& m)
 {
+   unsigned seed = chrono::system_clock::now().time_since_epoch().count();
    //warning car conversion long long en unsigned perte de precision
    shuffle(m.begin(), m.end(), default_random_engine(seed));
 }
 
-auto minelement(const Vecteur& v)
+auto minelement(const Vecteur& v1, const Vecteur& v2)
 {
-   return min_element(v.begin(), v.end());
+   return *min_element(v1.begin(), v1.end()) < *min_element(v2.begin(), v2.end());
 }
 void sortMatrice(Matrice& m)
 {
-   sort(m.begin(), m.end(), min_element);
+   sort(m.begin(), m.end(), minelement);
 }

@@ -47,12 +47,33 @@ Vecteur sommeColonne(const Matrice& m);
  */
 Vecteur vectSommeMin(const Matrice& m);
 
+/**
+ * Vérifie si tout les vecteurs d'une matrice ont la même taille.
+ * @param m Matrice
+ * @return  Un bool indiquant si tout les vecteurs ont la même taille
+ */
 bool estReguliere(const Matrice& m);
+
+/**
+ * Vérifie si la matrice estCarré, si la matrice est vide elle est considéré carré.
+ * @param m Matrice
+ * @return  un bool indiquant si la matrice est carré ou non.
+ */
 bool estCarre(const Matrice& m);
 
-void shuffleVecteur(Vecteur& v);
+/**
+ * Melange les vecteurs d'une matrice en fonction d'un clock, ne change pas
+ * l'ordre à l'interieur des vecteurs.
+ * @param m Matrice
+ * @return
+ */
 void shuffleMatrice(Matrice& m);
-void sortVecteur(Vecteur& v);
+
+/**
+ * Trie la matrice en fonction du min_element de chaque vecteur
+ * @param m Matrice
+ * @return
+ */
 void sortMatrice(Matrice& m);
 
 #endif //INC_07_MATRICE_VECTEUR_H

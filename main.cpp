@@ -22,7 +22,7 @@ using namespace std;
 
 int main() {
    Vecteur v1 = {1, 2, 3};
-   Matrice m1 = {{3,2,1},{8,9,6},{3,0,2}};
+   Matrice m1 = {{3,2,1},{8,9,4},{3,5,2}};
    Matrice vide = {};
 
    cout << "Vecteur      : " << v1 << endl
@@ -39,13 +39,14 @@ int main() {
         << "minCol       : " << minCol(vide)         << endl
         << "sommeLigne   : " << sommeLigne(vide)   << endl
         << "sommeColonne : " << sommeColonne(vide) << endl
-        << "vectSommeMin : " << vectSommeMin(vide) << endl;
+        << "vectSommeMin : " << vectSommeMin(vide) << endl << endl;
 
 
-   shuffleVecteur(v1);
    shuffleMatrice(m1);
-   cout << "Vecteur Shuffled  : " << v1               << endl
-        << "Matrice Shuffled  : " << m1;
+   cout << "Matrice Shuffled  : " << m1 << endl;
+
+   sortMatrice(m1);
+   cout << "Matrice Sort      : " << m1;
    //------------------------------------------------------
    // fin de programme
    cout << endl;
