@@ -13,10 +13,25 @@
 #ifndef INC_07_MATRICE_VECTEUR_H
 #define INC_07_MATRICE_VECTEUR_H
 
+#include <vector>
+
 using Vecteur = std::vector<int>;
 using Matrice = std::vector<Vecteur>;
 
+/**
+ * Affiche un vecteur au format (x,x,x)
+ * @param os Flux de sortie
+ * @param v  Vecteur
+ * @return   Flux de sortie
+ */
 std::ostream& operator<< (std::ostream& os, const Vecteur& v);
+
+/**
+ * Affiche une matrice au format [(x,x,x), (x,x,x)]
+ * @param os Flux de sortie
+ * @param v  Vecteur
+ * @return   Flux de sortie
+ */
 std::ostream& operator<< (std::ostream& os, const Matrice& m);
 
 /**

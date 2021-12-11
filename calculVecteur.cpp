@@ -22,45 +22,29 @@ using namespace std;
  * @param v2 Second vecteur à comparer
  * @return Retourne true si v1 est plus petit ou égal que v2, sinon false
  */
-bool comparerTailleVecteur(const Vecteur& v1, const Vecteur& v2) {
-   return v1.size() <= v2.size();
-}
-
-unsigned minCol(const Matrice& m) {
-   if (m.empty())
-      return 0;
-   return (*min_element(m.begin(), m.end(), comparerTailleVecteur)).size();
-}
+bool comparerTailleVecteur(const Vecteur& v1, const Vecteur& v2);
 
 /**
  * Trouve la taille maximum des colonnes d'une matrice
  * @param m
  * @return
  */
-unsigned maxCol(const Matrice& m) {
-   if (m.empty())
-      return 0;
-   return (*max_element(m.begin(), m.end(), comparerTailleVecteur)).size();
-}
+unsigned maxCol(const Matrice& m);
 
 /**
  * Effectue la somme de toutes les valeurs d'un vecteur
  * @param v
  * @return
  */
-int sommeVecteur(const Vecteur& v) {
-   return accumulate(v.begin(), v.end(), 0);
-}
+int sommeVecteur(const Vecteur& v);
 
-Vecteur sommeLigne(const Matrice& m) {
-   Vecteur resultat(m.size());
-   transform(m.begin(), m.end(), resultat.begin(), sommeVecteur);
-   return resultat;
-}
-
-int add(int v1, int v2) {
-   return (v1 + v2);
-}
+/**
+ * Effectue l'addtion la valeur de deux cellules d'un vecteur
+ * @param v1 Valeur 1
+ * @param v2 Valeur 2
+ * @return Valeurs additionnées
+ */
+int add(int v1, int v2);
 
 /**
  * Est équivalent à l'addition de deux vecteur:
@@ -69,10 +53,18 @@ int add(int v1, int v2) {
  * @param v2
  * @return
  */
-Vecteur additionColonne(Vecteur v1, Vecteur v2) {
-   Vecteur res(max(v1.size(), v2.size()), 0);
-   transform(v1.begin(), v1.end(), v2.begin(), res.begin(), add);
-   return res;
+Vecteur additionColonne(const Vecteur& v1, const Vecteur& v2);
+
+unsigned minCol(const Matrice& m) {
+   if (m.empty())
+      return 0;
+   return (*min_element(m.begin(), m.end(), comparerTailleVecteur)).size();
+}
+
+Vecteur sommeLigne(const Matrice& m) {
+   Vecteur resultat(m.size());
+   transform(m.begin(), m.end(), resultat.begin(), sommeVecteur);
+   return resultat;
 }
 
 Vecteur sommeColonne(const Matrice& m) {
@@ -90,4 +82,29 @@ Vecteur vectSommeMin(const Matrice& m) {
    //pour en ressortir l'index
    unsigned index = min_element(somme.begin(), somme.end()) - somme.begin();
    return m[index];
+}
+
+bool comparerTailleVecteur(const Vecteur& v1, const Vecteur& v2) {
+   return v1.size() <= v2.size();
+}
+
+unsigned maxCol(const Matrice& m) {
+   if (m.empty())
+      return 0;
+   return (*max_element(m.begin(), m.end(), comparerTailleVecteur)).size();
+}
+
+int sommeVecteur(const Vecteur& v) {
+   return accumulate(v.begin(), v.end(), 0);
+}
+
+int add(int v1, int v2) {
+   return (v1 + v2);
+}
+
+Vecteur additionColonne(const Vecteur& v1, const Vecteur& v2) {
+   Vecteur res(max(v1.size(), v2.size()), 0);
+   //Additionne des deux vecteurs
+   transform(v1.begin(), v1.end(), v2.begin(), res.begin(), add);
+   return res;
 }

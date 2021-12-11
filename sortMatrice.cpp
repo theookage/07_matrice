@@ -1,6 +1,6 @@
 /*
   ---------------------------------------------------------------------------
-  Fichier     : main.cpp
+  Fichier     : sortMatrice.cpp
   Nom du labo : 07 - Matrice
   Auteur(s)   : Mario Amos & Théo Coutaudier
   Date        : 8.12.2021
@@ -23,6 +23,15 @@ Compilateur   : Mingw-w64 g++ 11.2.0
 
 using namespace std;
 
+
+/**
+ * Indique quel vecteur possede le plus petit ellement entre v1 et v2
+ * @param m Matrice
+ * @return 1 si le plus petit element de v1 et plus petit que celui de v2
+ */
+bool minElement(const Vecteur& v1, const Vecteur& v2);
+
+
 void shuffleMatrice(Matrice& m)
 {
    //creer une seed en fonction du temps
@@ -31,16 +40,12 @@ void shuffleMatrice(Matrice& m)
    shuffle(m.begin(), m.end(), default_random_engine(seed)); //mélange aleatoirement
 }
 
-/**
- * Indique quel vecteur possede le plus petit ellement entre v1 et v2
- * @param m Matrice
- * @return 1 si le plus petit element de v1 et plus petit que celui de v2
- */
-bool minelement(const Vecteur& v1, const Vecteur& v2)
-{
-   return *min_element(v1.begin(), v1.end()) < *min_element(v2.begin(), v2.end());
-}
 void sortMatrice(Matrice& m)
 {
-   sort(m.begin(), m.end(), minelement); //trie en fonction de minelement
+   sort(m.begin(), m.end(), minElement); //trie en fonction de minElement
+}
+
+bool minElement(const Vecteur& v1, const Vecteur& v2)
+{
+   return *min_element(v1.begin(), v1.end()) < *min_element(v2.begin(), v2.end());
 }

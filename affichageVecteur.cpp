@@ -10,12 +10,11 @@
   ---------------------------------------------------------------------------
 */
 
-#include <vector>
 #include <iostream>
+
 #include "vecteur.h"
 
 using namespace std;
-
 
 ostream &operator<<(ostream& os, const Vecteur& v) {
    os << "(";

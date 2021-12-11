@@ -10,11 +10,8 @@
   Compilateur : Mingw-w64 g++ 11.2.0
   ---------------------------------------------------------------------------
 */
-#include <algorithm>
-#include <iostream>
-#include <cstdlib>
-#include <iomanip>
-#include <cmath>
+#include <iostream>  //Pour l'affichage
+#include <limits>    //Pour numeric_limits<streamsize>::max()
 
 #include "vecteur.h"
 
