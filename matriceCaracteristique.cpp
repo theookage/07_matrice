@@ -19,33 +19,42 @@
 using namespace std;
 
 bool sizeOK = true;
-
 size_t taille ;
 
-void test(const Vecteur& v)
+/**
+ * Vérifie que la taille du vecteur correspond avec taille
+ * @param m Matrice
+ * @return
+ */
+void isSizeOk(const Vecteur& v)
 {
+   //met sizeOK false si la taille du vecteur n'est pas la même que taille
    if (v.size() != taille)
    {
       sizeOK = false;
    }
 }
+
 bool estReguliere(const Matrice& m) {
 
-   if(m.empty())
+   if(m.empty()) //Vérifie si la matrice est vide
    {
       return true;
    }
+   //utilise la taille du premier vecteur de la amtrice comme taille de référence
    taille = m[0].size();
-   for_each(m.begin(),m.end(), test);
+
+   //Vérifie que chaque vecteur de la matrice m ont la même taille
+   for_each(m.begin(),m.end(), isSizeOk);
    return sizeOK;
    }
 
 bool estCarre(const Matrice& m){
-   if(m.empty())
+   if(m.empty()) //Vérifie si la matrice est vide
    {
       return true;
    }
-   if(estReguliere(m))
+   if(estReguliere(m)) //vérifie si la matrice est régulière
    {
       if(m[0].size() == m.size()){
          return true;
