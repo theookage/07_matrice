@@ -53,7 +53,7 @@ int add(int v1, int v2);
  * @param v2
  * @return
  */
-Vecteur additionColonne(const Vecteur& v1, const Vecteur& v2);
+Vecteur additionColonne(Vecteur v1, Vecteur v2);
 
 unsigned minCol(const Matrice& m) {
    if (m.empty())
@@ -68,8 +68,6 @@ Vecteur sommeLigne(const Matrice& m) {
 }
 
 Vecteur sommeColonne(const Matrice& m) {
-   if (!estReguliere(m))
-      return {};
    return accumulate(m.begin(), m.end(), Vecteur(maxCol(m), 0), additionColonne);
 }
 
@@ -102,8 +100,16 @@ int add(int v1, int v2) {
    return (v1 + v2);
 }
 
-Vecteur additionColonne(const Vecteur& v1, const Vecteur& v2) {
-   Vecteur res(max(v1.size(), v2.size()), 0);
+Vecteur additionColonne(Vecteur v1, Vecteur v2) {
+   //On doit resize le vecteur le plus petit, sinon cela va aller chercher une
+   //valeur "aléatoire" en mémoire pour l'addition
+   const size_t TAILLE_MAX = max(v1.size(), v2.size());
+   if (v1.size() < TAILLE_MAX)
+      v1.resize(TAILLE_MAX, 0);
+   if (v2.size() < TAILLE_MAX)
+      v2.resize(TAILLE_MAX, 0);
+
+   Vecteur res(TAILLE_MAX, 0);
    //Additionne des deux vecteurs
    transform(v1.begin(), v1.end(), v2.begin(), res.begin(), add);
    return res;
