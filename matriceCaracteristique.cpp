@@ -14,7 +14,7 @@
 
 #include <algorithm>
 
-#include "vecteur.h"
+#include "matrice.h"
 
 using namespace std;
 

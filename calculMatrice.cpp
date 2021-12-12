@@ -1,6 +1,6 @@
 /*
   ---------------------------------------------------------------------------
-  Fichier     : calculVecteur.cpp
+  Fichier     : calculMatrice.cpp
   Auteur(s)   : Mario Amos & Théo Coutaudier
   Date        : 08.12.2021
   But         : Librairie mettant à disposition des utilitaires pour le traitement
@@ -13,7 +13,7 @@
 #include <algorithm>
 #include <numeric>
 
-#include "vecteur.h"
+#include "matrice.h"
 
 using namespace std;
 

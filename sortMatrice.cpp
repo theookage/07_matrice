@@ -19,7 +19,7 @@ Compilateur   : Mingw-w64 g++ 11.2.0
 #include <random>       // std::default_random_engine
 #include <chrono>       // std::chrono::system_clock
 
-#include "vecteur.h"
+#include "matrice.h"
 
 using namespace std;
 

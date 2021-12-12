@@ -13,7 +13,7 @@
 #include <iostream>  //Pour l'affichage
 #include <limits>    //Pour numeric_limits<streamsize>::max()
 
-#include "vecteur.h"
+#include "matrice.h"
 
 using namespace std;
 

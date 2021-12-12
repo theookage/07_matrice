@@ -1,6 +1,6 @@
 /*
   ---------------------------------------------------------------------------
-  Fichier     : affichageVecteur.cpp
+  Fichier     : affichageMatrice.cpp
   Auteur(s)   : Mario Amos & Théo Coutaudier
   Date        : 08.12.2021
   But         : Librairie mettant à disposition des utilitaires pour l'affichage
@@ -12,7 +12,7 @@
 
 #include <iostream>
 
-#include "vecteur.h"
+#include "matrice.h"
 
 using namespace std;
 

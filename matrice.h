@@ -1,6 +1,6 @@
 /*
   ---------------------------------------------------------------------------
-  Fichier     : vecteur.h
+  Fichier     : matrice.h
   Auteur(s)   : Mario Amos & Théo Coutaudier
   Date        : 08.12.2021
   But         : Librairie mettant à disposition des utilitaires pour le traitement
@@ -10,8 +10,8 @@
   ---------------------------------------------------------------------------
 */
 
-#ifndef INC_07_MATRICE_VECTEUR_H
-#define INC_07_MATRICE_VECTEUR_H
+#ifndef INC_07_MATRICE_MATRICE_H
+#define INC_07_MATRICE_MATRICE_H
 
 #include <vector>
 
@@ -91,4 +91,4 @@ void shuffleMatrice(Matrice& m);
  */
 void sortMatrice(Matrice& m);
 
-#endif //INC_07_MATRICE_VECTEUR_H
+#endif //INC_07_MATRICE_MATRICE_H
